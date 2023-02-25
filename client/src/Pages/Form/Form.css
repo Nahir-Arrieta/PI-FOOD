@@ -1,0 +1,164 @@
+/* .containerForm {
+  background: #1a2a6c;
+  background-image: url("../../image/4224811.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "monserrat", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.form {
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: 1px solid #70b0b4;
+  width: 400px;
+  margin: auto;
+}
+
+.group {
+  position: relative;
+  margin: 5px;
+}
+
+.form input {
+  background: none;
+  color: #c6c6c6;
+  font-size: 15px;
+  padding: 3px 3px 3px 2px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #d0b3b5;
+}
+
+.form input:focus {
+  outline: none;
+  color: #000;
+}
+
+.form label {
+  font-size: 16px;
+  top: 10px;
+  pointer-events: none;
+}
+
+.errorForm {
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.buttonForm:enabled {
+  background: #5c5c6c;
+  border: none;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 30px;
+  cursor: pointer;
+  
+}
+
+.buttonForm:disabled {
+  background: #5c5c6c;
+  border: none;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 30px;
+  cursor: not-allowed;
+  
+} */
+
+.containerForm {
+  background: #1a2a6c url("../../image/4224811.jpg") no-repeat center
+    center/cover;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "monserrat", Arial, Helvetica, sans-serif;
+}
+
+.form h1 {
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form {
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: 1px solid #70b0b4;
+  width: 400px;
+  margin: auto;
+}
+
+.group {
+  position: relative;
+  margin: 5px;
+}
+
+.form input {
+  background: none;
+  color: #c6c6c6;
+  font-size: 15px;
+  padding: 3px 3px 3px 2px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.form input:focus {
+  outline: none;
+  color: #000;
+}
+
+.form label {
+  font-size: 16px;
+  top: 10px;
+  pointer-events: none;
+}
+
+.errorForm {
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.buttonForm {
+  background: #009b94;
+  border: none;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 30px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.buttonForm:disabled {
+  background: #009b94;
+  border: none;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 30px;
+  cursor: not-allowed;
+}
