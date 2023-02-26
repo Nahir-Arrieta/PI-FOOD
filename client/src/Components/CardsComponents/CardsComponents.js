@@ -6,10 +6,14 @@ import SearchBar from "../SearchBar/SearchBar";
 import Pagination from "../Pagination/Pagination";
 import Filters from "../Filters/Filters";
 import Ordering from "../Ordering/Ordering";
+import "./CardsComponents.scss";
 import "./CardsComponents.css";
+
+
 const CardsComponents = () => {
   const dispatch = useDispatch();
   const recipeState = useSelector((state) => state.recipes);
+  // console.log(recipeState);
   const [currentPage, setCurrentPage] = useState(1); //pagina actual
   const [postsPerPage, setPostsPerPage] = useState(9); // vamos a mostrar nueve card por pagina
   const [order, setOrder] = useState(false);
@@ -26,20 +30,17 @@ const CardsComponents = () => {
   useEffect(() => {}, [order]);
 
   return (
-    <div>
+    <div> 
       <div className="components">
-        <div>
           <SearchBar recipeState={recipeState} />
-        </div>
+        <div className="filter-ordering">
         <div className="order-menu">
-          {/* <div className="filters-components"> */}
           <Filters setRestart={setRestart} restart={restart} />
-          {/* </div> */}
-          {/* <div className="ordering-container"> */}
           <Ordering setOrder={setOrder} order={order} />
-          {/* </div> */}
+        </div>
         </div>
       </div>
+      <div className="container-cards-1">
       <div className="cards-style">
         {currentPosts?.map((element, index) => {
           return (
@@ -53,6 +54,20 @@ const CardsComponents = () => {
             />
           );
         })}
+      </div>
+      {
+        recipeState.length === 0 && (
+          <div className="pan-loader">
+            <div className="loader"></div>
+              <div className="pan-container">
+                <div className="pan"></div>
+                <div className="handle"></div>
+              </div>
+            <div className="shadow"></div>
+          </div>
+        )
+      }
+     
       </div>
       <Pagination
         totalPosts={recipeState.length}

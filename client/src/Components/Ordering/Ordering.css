@@ -1,6 +1,7 @@
 .ordenamiento {
   display: flex;
-  padding-right: 60px;
+  justify-content: center;
+  align-items: center;
 }
 
 .order-content select {
@@ -13,7 +14,7 @@
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: #1dda04;
+  background: #5ace99;
   background-image: none;
 }
 .order-content {
@@ -21,7 +22,7 @@
   /* display: flex; */
   width: 150px;
   height: 40px;
-  background: #1dda04;
+  background: #5ace99;
   overflow: hidden;
   border-radius: 0.25em;
   /* margin-bottom: 20px; */
@@ -47,7 +48,7 @@
   right: 0;
   bottom: 0;
   padding: 15px;
-  background: #1dda04;
+  background: #5ace99;
   pointer-events: none;
 }
 .order-content:hover::after {

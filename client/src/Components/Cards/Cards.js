@@ -11,16 +11,18 @@ const Cards = (props) => {
         </Link>
         <div className="intro">
           <h1>{props.name}</h1>
-          <div className="">
-            {props.diets?.map((element, index) => {
-              return (
-                <p key={index}> {element.name ? element.name : element}</p>
-              );
-            })}
+          <div className="container-card-diets">
+            <div>
+              {props.diets?.map((element, index) => {
+                return (
+                  <p key={index}> {element.name ? element.name : element}</p>
+                );
+              })}
+            </div>
+            <div className="health-score">
+              <img src={comidaSana} alt="comida sana" />
+              <span>{props.healthScore}</span>
           </div>
-          <div className="health-score">
-            <img src={comidaSana} alt="comida sana" />
-            <span>{props.healthScore}</span>
           </div>
         </div>
       </div>

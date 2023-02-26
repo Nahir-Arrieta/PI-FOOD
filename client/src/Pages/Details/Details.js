@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getRecipeDetail } from "../../Redux/actions";
+import { clearRecipeDetail, getRecipeDetail } from "../../Redux/actions";
 import "./Details.css";
 import vegetal from "../../image/vegetal.png";
 
@@ -12,6 +12,9 @@ function Details() {
 
   useEffect(() => {
     dispatch(getRecipeDetail(id));
+    return () => {
+      dispatch(clearRecipeDetail());
+    };
   }, [dispatch, id]);
 
   return (
@@ -50,7 +53,10 @@ function Details() {
           </div>
         </div>
       ) : (
-        <h1>Loading...</h1>
+        <div className="container-spinner">
+        <div className="custom-loader">
+        </div>
+        </div>
       )}
     </div>
   );

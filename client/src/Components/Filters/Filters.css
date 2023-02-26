@@ -1,12 +1,9 @@
-/* .filters-container {
-  display: inline-block;
-} */
+
 .filters-container {
   display: flex;
-  width: 75%;
-  /* align-items: center; */
-  justify-content: space-around;
-  /* padding-right: 90px; */
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-select select {
@@ -19,21 +16,16 @@
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: #1dda04;
+  background: #5ace99;
   background-image: none;
 }
 .content-select {
   position: relative;
-  margin-right: 2px;
   width: 150px;
   height: 39px;
-  background: #1dda04;
+  background: #5ace99;
   overflow: hidden;
   border-radius: 0.25em;
-  /* margin-bottom: 80px; */
-  margin-top: 5px;
-  /* display: inline-block; nuevo */
-  /* vertical-align: middle;  */
 }
 .content-select select {
   width: 100%;
@@ -54,7 +46,7 @@
   right: 0;
   bottom: 0;
   padding: 15px;
-  background: #1dda04;
+  background: #5ace99;
   pointer-events: none;
 }
 .content-select:hover::after {
@@ -65,18 +57,14 @@
 }
 
 .buttons {
-  /* justify-content: space-between; */
   display: flex;
-
-  /* gap: 10px; */
-  /* margin-top: 158px; */
   align-items: center;
-  /* display: inline-block; */
-  /* vertical-align: middle;  */
+  justify-content: center;
 }
+
 .buttons button {
   background: none;
-  border: 2px solid #1dda04;
+  border: 2px solid #5ace99;
   font-family: "monserrat", sans-serif;
   text-transform: uppercase;
   padding: 10px 10px;
@@ -85,6 +73,8 @@
   cursor: pointer;
   transition: color 0.3s linear;
   position: relative;
+  border-radius: 0.25em;
+  z-index: 1000;
 }
 
 .buttons button:hover {
@@ -98,7 +88,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #1dda04;
+  background: #5ace99;
   z-index: -1;
   transition: transform 0.3s;
   transform-origin: 0 0;

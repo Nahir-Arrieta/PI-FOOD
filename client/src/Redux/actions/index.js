@@ -8,6 +8,8 @@ export const FILTER_RECIPES = "FILTER_RECIPES";
 export const ALL_ORDERING = "ALL_ORDERING";
 export const POST_RECIPE = "POST_RECIPE";
 export const GET_RECIPE_DETAIL = "GET_RECIPE_DETAIL";
+export const CLEAR_RECIPE_DETAIL = "CLEAR_RECIPE_DETAIL";
+
 
 export const getRecipes = () => async (dispatch) => {
   const recipesAll = await axios.get("http://localhost:3001/recipes");
@@ -19,11 +21,19 @@ export const getRecipes = () => async (dispatch) => {
 };
 
 export const getSearchRecipe = (name) => async (dispatch) => {
-  const response = await axios.get(`http://localhost:3001/recipe?name=${name}`);
-  dispatch({
-    type: SEARCH_RECIPE,
-    payload: response.data,
-  });
+  try {
+    const response = await axios.get(`http://localhost:3001/recipe?name=${name}`);
+    dispatch({
+      type: SEARCH_RECIPE,
+      payload: response.data,
+    });
+  } catch (error) {
+   dispatch({
+      type: SEARCH_RECIPE,
+      payload: ["Recipe not found"],
+    });
+  }
+  
 };
 
 export const getDiets = () => async (dispatch) => {
@@ -65,9 +75,15 @@ export const postRecipe = (create) => async (dispatch) => {
 
 export const getRecipeDetail = (id) => async (dispatch) => {
   const response = await axios.get(`http://localhost:3001/recipes/${id}`);
-  console.log(response.data);
   dispatch({
     type: GET_RECIPE_DETAIL,
     payload: response.data,
+  });
+};
+
+export const clearRecipeDetail = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_RECIPE_DETAIL,
+    payload: {},
   });
 };

@@ -57,7 +57,6 @@ const allRecipesControllers = async () => {
       healthScore: element.healthScore,
     };
   });
-
   return recipeData;
 };
 
@@ -93,30 +92,41 @@ const recipeNameControllers = async (name) => {
         diets: element.diets.map((diet) => {
           return diet;
         }),
+        healthScore: element.healthScore,
       };
     });
+    console.log(recipeData);
     return recipeData;
+
   } catch (error) {
     return "Recipe not found";
   }
 };
 
 const recipeNameControllersBd = async (name) => {
-  const recipeNameBd = await Recipe.findAll({
-    where: {
-      name: {
-        [Op.iLike]: `%${name}%`,
+  try {
+    const recipeNameBd = await Recipe.findAll({
+      where: {
+        name: {
+          [Op.iLike]: `%${name}%`,
+        },
       },
-    },
-    include: {
-      model: Diets,
-      attributes: ["name"],
-      through: {
-        attributes: [],
+      include: {
+        model: Diets,
+        attributes: ["name"],
+        through: {
+          attributes: [],
+        },
       },
-    },
-  });
-  return recipeNameBd;
+    });
+    if (recipeNameBd.length === 0) {
+      throw new Error("Recipe not found");
+    }
+    return recipeNameBd;
+  } catch (error) {
+    return "Recipe not found";
+  }
+
 };
 
 const postRecipeControllers = async (

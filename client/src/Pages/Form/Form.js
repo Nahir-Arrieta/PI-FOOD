@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDiets, postRecipe } from "../../Redux/actions";
 import Select from "react-select";
 import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./Form.css";
 
 const Form = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const dietsAll = useSelector((state) => state.diets);
   const [create, setCreate] = useState({
@@ -76,7 +78,8 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(postRecipe(create));
-    alert("Recipe created successfully");
+    window.confirm("recipe created successfully");
+    history.push("/home");
   };
 
   useEffect(() => {

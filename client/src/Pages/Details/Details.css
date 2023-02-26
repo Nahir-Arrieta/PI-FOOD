@@ -2,7 +2,14 @@
   font-family: Lato, sans-serif;
 }
 .container-detail {
-  background: url("../../image/M1986433.jpg") no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../image/M1986433.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* background: url("../../image/M1986433.jpg") no-repeat center center/cover; */
 }
 
 .container-detail h2 {
@@ -33,29 +40,30 @@
   height: 340px;
   object-fit: cover;
 }
-/* .card-detail h2 {
-  font-size: 1.3rem;
-  margin-top: 15px;
-  padding-bottom: 30px;
-  font-family: Lato, sans-serif;
-  text-align: center;
+
+.vegetales{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 10px;
 }
 
-.card-detail p {
-  text-align: center;
-  padding: 40px;
-  font-family: Lato, sans-serif;
-  font-weight: 400;
-  line-height: 1.5rem;
-} */
-
 .info-container {
-  padding: 20px;
+  padding-left: 30px;
+  padding-bottom: 30px;
   width: 660px;
   height: 340px;
   overflow-y: auto;
   overflow-x: hidden;
+  
 }
+
+.info-container p{
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: justify;
+}
+
 .vegetales img {
   width: 40px;
   height: 40px;
@@ -64,7 +72,7 @@
 .vegetales h3 {
   font-size: 1.2rem;
   font-weight: 400;
-  margin: 0;
+  margin: 5px;
 }
 .diets-container h3 {
   font-size: 1.2rem;
@@ -90,4 +98,44 @@
 }
 .steps-container h3 {
   margin: 20px;
+}
+
+.custom-loader {
+  width: 96px;
+  height: 96px;
+  background:#1db60a;
+  --c:radial-gradient(farthest-side,#000 92%,#0000);
+  --s:40px 40px;
+  -webkit-mask:
+    var(--c) top    -16px left 50%,
+    var(--c) right  -16px top  50%,
+    var(--c) bottom -16px left 50%,
+    var(--c) left   -16px top  50%,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  -webkit-mask-repeat:no-repeat;
+  animation: cu8 1.5s infinite;
+}
+
+@keyframes cu8 {
+  0%    {-webkit-mask-size:0    0  ,0    0  ,0    0  ,0    0  ,auto}
+  12.5% {-webkit-mask-size:var(--s),0    0  ,0    0  ,0    0  ,auto}
+  25%   {-webkit-mask-size:var(--s),var(--s),0    0  ,0    0  ,auto}
+  37.5% {-webkit-mask-size:var(--s),var(--s),var(--s),0    0  ,auto}
+  45%,
+  55%   {-webkit-mask-size:var(--s),var(--s),var(--s),var(--s),auto}
+  62.5% {-webkit-mask-size:0    0  ,var(--s),var(--s),var(--s),auto}
+  75%   {-webkit-mask-size:0    0  ,0    0  ,var(--s),var(--s),auto}
+  87.5% {-webkit-mask-size:0    0  ,0    0  ,0   0   ,var(--s),auto}
+  100%  {-webkit-mask-size:0    0  ,0    0  ,0   0   ,0   0   ,auto}
+}
+
+.container-spinner{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
